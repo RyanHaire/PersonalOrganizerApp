@@ -17,6 +17,8 @@ namespace PersonalOrganizerApp.Models
        
     }
 
+
+    // db context is the dbcontext for the app (all the models)
     public class ReminderContext: DbContext
     {
         public ReminderContext(DbContextOptions<ReminderContext> options) : base(options)
@@ -24,6 +26,7 @@ namespace PersonalOrganizerApp.Models
 
         }
 
+        public DbSet<Profile> Profiles { get; set; }
         public DbSet<Reminder> Reminders { get; set; }
     }
 }

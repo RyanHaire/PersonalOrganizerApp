@@ -16,6 +16,22 @@ namespace PersonalOrganizerApp.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
 
+            modelBuilder.Entity("PersonalOrganizerApp.Models.Profile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<int>("PhoneNumber");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Profiles");
+                });
+
             modelBuilder.Entity("PersonalOrganizerApp.Models.Reminder", b =>
                 {
                     b.Property<int>("Id")

@@ -61,8 +61,8 @@ namespace PersonalOrganizerApp
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Reminder}/{action=Index}/{id?}");
             });
         }
     }
