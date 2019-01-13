@@ -13,7 +13,6 @@
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/PersonalOrganizerApp.TagHelpers.input.cache
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/PersonalOrganizerApp.TagHelpers.output.cache
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/PersonalOrganizerApp.RazorCoreGenerate.cache
-/Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/Razor/Views/Reminder/Create.g.cshtml.cs
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/Razor/Views/Reminder/Delete.g.cshtml.cs
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/Razor/Views/Reminder/Details.g.cshtml.cs
@@ -31,3 +30,4 @@
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/PersonalOrganizerApp.dll
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/PersonalOrganizerApp.pdb
 /Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/PersonalOrganizerApp.csproj.CopyComplete
+/Users/Ryan/Projects/net-apps/PersonalOrganizerApp/PersonalOrganizerApp/obj/Debug/netcoreapp2.1/PersonalOrganizerApp.csprojAssemblyReference.cache
