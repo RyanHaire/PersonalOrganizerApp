@@ -8,9 +8,25 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.7" />
+    <PackageReference Include="Twilio" Version="5.25.1" />
+    <PackageReference Include="Twilio.AspNet.Core" Version="5.20.1" />
+    <PackageReference Include="Quartz" Version="3.0.7" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Views\Home\About.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scheduler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BackgroundTasks\EmptyClass.cs" />
+    <Compile Remove="AppServices\BackgroundTaskManager.cs" />
+    <Compile Remove="AppHelpers\BackgroundTaskManager.cs" />
+    <Compile Remove="BackgroundTasks\BackgroundTaskManager.cs" />
+    <Compile Remove="BackgroundTasks\ScheduledJob.cs" />
+    <Compile Remove="BackgroundTasks\ScheduledJobFactory.cs" />
+    <Compile Remove="Schedule\EmptyClass.cs" />
+    <Compile Remove="Schedule\QuartzExtension.cs" />
   </ItemGroup>
 </Project>

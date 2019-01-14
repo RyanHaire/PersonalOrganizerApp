@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PersonalOrganizerApp.Models;
 
 namespace PersonalOrganizerApp.Migrations
 {
     [DbContext(typeof(ReminderContext))]
-    partial class ReminderContextModelSnapshot : ModelSnapshot
+    [Migration("20190114023959_UpdateProfile")]
+    partial class UpdateProfile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

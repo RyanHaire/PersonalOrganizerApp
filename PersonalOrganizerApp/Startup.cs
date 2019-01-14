@@ -11,6 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PersonalOrganizerApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Quartz;
+using Quartz.Impl;
+using Quartz.Spi;
+using PersonalOrganizerApp.Scheduler;
 
 namespace PersonalOrganizerApp
 {
@@ -36,13 +40,18 @@ namespace PersonalOrganizerApp
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddLogging();
+
+            services.AddQuartz(typeof(ScheduledJob));
+
+            // adding database connection
             var connection = "Data Source=organizerapp.db";
             services.AddDbContext<ReminderContext>
             (options => options.UseSqlite(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IScheduler scheduler)
         {
             if (env.IsDevelopment())
             {
@@ -57,6 +66,8 @@ namespace PersonalOrganizerApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseQuartz();
 
             app.UseMvc(routes =>
             {

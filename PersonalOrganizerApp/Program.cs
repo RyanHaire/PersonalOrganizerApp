@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using PersonalOrganizerApp.Controllers;
 
 namespace PersonalOrganizerApp
 {
@@ -14,6 +15,7 @@ namespace PersonalOrganizerApp
     {
         public static void Main(string[] args)
         {
+            SmsController.SendTextMessage(SmsController.CommandListToString());
             CreateWebHostBuilder(args).Build().Run();
         }
 
