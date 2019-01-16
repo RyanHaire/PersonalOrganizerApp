@@ -30,7 +30,6 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Profile" asp-action="Index">Profiles</a></li>
                         <li><a asp-area="" asp-controller="Reminder" asp-action="Index">Reminders</a></li>
                     </ul> 
                 </div>
@@ -52,6 +51,8 @@
             <script src="~/lib/jquery/dist/jquery.js"></script>
             <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
             <script src="~/js/site.js" asp-append-version="true"></script>
+            @*<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+            <script src="~/js/reminder.js"></script>*@
         </environment>
         <environment exclude="Development">
             <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"

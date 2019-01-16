@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PersonalOrganizerApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
-using Quartz.Impl;
-using Quartz.Spi;
 using PersonalOrganizerApp.Scheduler;
+using PersonalOrganizerApp.Hubs;
 
 namespace PersonalOrganizerApp
 {
@@ -42,7 +36,9 @@ namespace PersonalOrganizerApp
 
             services.AddLogging();
 
-            services.AddQuartz(typeof(ScheduledJob));
+            services.AddQuartz(typeof(ReminderCheckDateJob));
+
+            services.AddSignalR();
 
             // adding database connection
             var connection = "Data Source=organizerapp.db";
@@ -68,6 +64,11 @@ namespace PersonalOrganizerApp
             app.UseCookiePolicy();
 
             app.UseQuartz();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ReminderHub>("/reminderHub");
+            });
 
             app.UseMvc(routes =>
             {

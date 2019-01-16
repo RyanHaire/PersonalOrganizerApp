@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PersonalOrganizerApp.Models;
 
@@ -19,9 +16,17 @@ namespace PersonalOrganizerApp.Controllers
         }
 
         // GET: Reminder
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(bool deletedAll = false)
         {
+            ViewData["deletedAll"] = deletedAll;
             return View(await _context.Reminders.ToListAsync());
+        }
+
+        public async Task<IActionResult> DeleteAll()
+        {
+            _context.Reminders.RemoveRange(_context.Reminders);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", new { deletedAll = true });
         }
 
         // GET: Reminder/Details/5
@@ -105,10 +110,7 @@ namespace PersonalOrganizerApp.Controllers
                     {
                         return NotFound();
                     }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
                 return RedirectToAction(nameof(Index));
             }

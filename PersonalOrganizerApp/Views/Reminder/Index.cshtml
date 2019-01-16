@@ -7,8 +7,41 @@
 <h2>Reminders</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a> | 
+    <a asp-action="DeleteAll">Delete All</a>
 </p>
+<div class="row">
+    <div class="col-12">
+        @{
+            if((bool)ViewData["deletedAll"]) 
+            {
+                @Html.Raw("<span id='delete-notice'>Deleted all reminders successfully.")
+            }
+        }
+        <script type="text/javascript">
+            function clearNode() {
+                console.log('inside clearNode');
+                var element = document.getElementById("delete-notice")
+                element.parentNode.removeChild(element);
+            }
+
+           async function clearNodeTimeout(f) {
+            console.log('inside clearNodeTimeout');
+            return new Promise((resolve) => {
+                setTimeout(() => resolve(f()), 7000)
+            })
+           }
+
+           clearNodeTimeout(clearNode);
+        </script>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">&nbsp;</div>
+    <div class="col-6">
+        <ul id="remindersList"></ul>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -22,20 +55,24 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/reminder.js"></script>

@@ -16,8 +16,8 @@ namespace PersonalOrganizerApp.Scheduler
            
             // add IJobDetail
             services.AddSingleton(provider => {
-                return JobBuilder.Create<ScheduledJob>()
-                    .WithIdentity("Sample.job", "group1")
+                return JobBuilder.Create<ReminderCheckDateJob>()
+                    .WithIdentity("ReminderCheckDate", "group1")
                     .Build();
             });
 
@@ -25,7 +25,7 @@ namespace PersonalOrganizerApp.Scheduler
             services.AddSingleton(provider =>
             {
                 return TriggerBuilder.Create()
-                .WithIdentity($"Sample.trigger", "group1")
+                .WithIdentity("ReminderCheckDateTrigger", "group1")
                 .StartNow()
                 .WithSimpleSchedule
                  (s =>

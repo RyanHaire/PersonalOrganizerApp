@@ -2,28 +2,12 @@
   <MonoDevelop.Ide.ItemProperties.PersonalOrganizerApp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="PersonalOrganizerApp Status">
     <Files>
-      <File FileName="PersonalOrganizerApp/Program.cs" Line="1" Column="1" />
-      <File FileName="PersonalOrganizerApp/Views/Reminder/Create.cshtml" Line="28" Column="16" />
-      <File FileName="PersonalOrganizerApp/Startup.cs" Line="15" Column="19" />
-      <File FileName="PersonalOrganizerApp/Controllers/SmsController.cs" Line="2" Column="34" />
+      <File FileName="PersonalOrganizerApp/Hubs/ReminderHub.cs" Line="8" Column="6" />
+      <File FileName="PersonalOrganizerApp/Scheduler/ReminderCheckDateJob.cs" Line="50" Column="97" />
+      <File FileName="PersonalOrganizerApp/Views/Reminder/Index.cshtml" Line="27" Column="13" />
+      <File FileName="PersonalOrganizerApp/Controllers/ReminderController.cs" Line="21" Column="49" />
       <File FileName="PersonalOrganizerApp Status" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="PersonalOrganizerApp" expanded="True">
-            <Node name="PersonalOrganizerApp" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="SmsController.cs" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

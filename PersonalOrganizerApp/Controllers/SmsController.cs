@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Twilio.AspNet.Core;
 using Twilio.AspNet.Common;
 using Twilio.TwiML;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 
-// For more information on enabling MVC for empty projects, 
-// visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+// not in use for the project
 namespace PersonalOrganizerApp.Controllers
 {
     public class SmsController : TwilioController
